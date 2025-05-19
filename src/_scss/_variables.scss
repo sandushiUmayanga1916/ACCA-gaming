@@ -1,0 +1,63 @@
+/* $fa-font-path: "../fonts/font-awesome-pro" !default; */
+
+$link-color: #ff0b34;
+
+// Typography
+$font-family-sans-serif: 'Roboto', sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.6;
+
+// Colors
+$body-bg: #222;
+$body-color: #fff;
+
+$primary: #ef002d;
+$secondary:#5a5051;
+
+$success: #38ad73;
+$danger: #ef002d;
+
+$border-radius: 0;
+
+$input-btn-focus-width: .2rem !default;
+$input-btn-focus-color-opacity: .15 !default;
+$input-btn-focus-blur: 2px !default;
+
+$input-color: #fff;
+$input-bg: rgb(61 38 39);
+$input-border-color: rgba(255, 255, 255, .25);
+$input-focus-border-color: rgba(255, 255, 255, .3);
+$input-focus-box-shadow: 0 0 0 0.2rem rgba(41, 50, 64, 0.3);
+$input-disabled-color: #999;
+$input-disabled-bg: rgb(102 75 76);
+$input-disabled-border-color: rgba(255, 255, 255, .25);
+$input-placeholder-color: #707070;
+$input-padding-y: .5rem;
+$input-padding-x: 1rem;
+$input-padding-y-lg: 1rem;
+$input-padding-x-lg: 1.5rem;
+
+$form-select-border-color: rgba(255, 255, 255, .15);
+$form-select-indicator-color: #fff;
+$form-select-disabled-color: #999;
+$form-select-disabled-bg: rgb(102 75 76);
+$form-select-disabled-border-color: rgba(255, 255, 255, .25);
+
+
+$btn-padding-y: .5rem;
+$btn-padding-x: 1rem;
+$btn-padding-y-lg: 1rem;
+$btn-padding-x-lg: 1.5rem;
+
+$form-check-input-width: 2em;
+$form-check-radio-checked-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/></svg>");
+
+$alert-padding-y: .5rem;
+$alert-padding-x: 1rem;
+$alert-border-radius: 5px;
+$alert-bg-scale: 0;
+$alert-border-width: 0;
+
+$table-cell-padding-y: .75rem;
+$table-cell-padding-x: 1rem;
+$table-border-color: rgba(255, 255, 255, .3);

@@ -1,0 +1,151 @@
+@mixin mobile($media) {
+    @if $media == "xs" {
+        
+        @include media-breakpoint-only(xs) { @content; }
+        
+    } @else if $media == "sm" {
+        
+        @include media-breakpoint-only(sm) { @content; }
+        
+    } @else if $media == "md" {
+        
+        @include media-breakpoint-only(md) { @content; }
+        
+    } @else if $media == "lg" {
+
+        @include media-breakpoint-only(lg) { @content; }
+
+    } @else if $media == "xl" {
+
+        @include media-breakpoint-only(xl) { @content; }
+
+	} @else if $media == "xxl" {
+
+        @include media-breakpoint-only(xxl) { @content; }
+
+	} @else if $media == "xxxl" {
+
+        @include media-breakpoint-only(xxxl) { @content; }
+
+    } @else if $media == "sm-x" {
+
+        @include media-breakpoint-up(sm) { @content; }
+        
+    } @else if $media == "md-x" {
+        
+        @include media-breakpoint-up(md) { @content; }
+        
+    } @else if $media == "lg-x" {
+
+        @include media-breakpoint-up(lg) { @content; }
+
+	} @else if $media == "xl-x" {
+
+        @include media-breakpoint-up(xl) { @content; }
+	
+	} @else if $media == "xxl-x" {
+
+        @include media-breakpoint-up(xxl) { @content; }
+
+    } @else if $media == "x-sm" {
+        
+        @include media-breakpoint-down(md) { @content; }
+        
+    } @else if $media == "x-md" {
+        
+        @include media-breakpoint-down(lg) { @content; }
+        
+    } @else if $media == "x-lg" {
+
+        @include media-breakpoint-down(xl) { @content; }
+
+	} @else if $media == "x-xl" {
+
+        @include media-breakpoint-down(xxl) { @content; }
+
+	} @else if $media == "x-xxl" {
+
+        @include media-breakpoint-down(xxxl) { @content; }
+
+    } @else if $media == "sm-md" {
+
+        @include media-breakpoint-between(sm, md) { @content; }
+
+    } @else if $media == "sm-lg" {
+
+        @include media-breakpoint-between(sm, lg) { @content; }
+
+	} @else if $media == "sm-xl" {
+
+        @include media-breakpoint-between(sm, xl) { @content; }
+
+	} @else if $media == "sm-xxl" {
+
+        @include media-breakpoint-between(sm, xxl) { @content; }
+
+    } @else if $media == "md-lg" {
+
+        @include media-breakpoint-between(md, lg) { @content; }
+
+	} @else if $media == "md-xl" {
+
+        @include media-breakpoint-between(md, xl) { @content; }
+
+	} @else if $media == "md-xxl" {
+
+        @include media-breakpoint-between(md, xxl) { @content; }
+
+	} @else if $media == "lg-xl" {
+
+        @include media-breakpoint-between(lg, xl) { @content; }
+		
+	} @else if $media == "lg-xxl" {
+
+        @include media-breakpoint-between(lg, xxl) { @content; }
+
+	}
+}
+
+// Placeholder text
+@mixin placeholder($color: $input-color-placeholder) {
+    // Firefox
+    &::-moz-placeholder {
+        color: $color;
+        opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+    }
+    &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
+    &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}
+
+// Transitions
+
+@mixin transition($transition...) {
+    -webkit-transition: $transition;
+	-moz-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+// Horizontal gradient, from left to right
+//
+// Creates two color stops, start and end, by specifying a color and position for each color stop.
+// Color stops are not available in IE9 and below.
+@mixin gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+    background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
+    background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
+    background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+}
+
+// Vertical gradient, from top to bottom
+//
+// Creates two color stops, start and end, by specifying a color and position for each color stop.
+// Color stops are not available in IE9 and below.
+@mixin gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+    background-image: -webkit-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);  // Safari 5.1-6, Chrome 10+
+    background-image: -o-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);  // Opera 12
+    background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+}
