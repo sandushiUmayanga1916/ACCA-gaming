@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import LoginRoute from './Middleware/LoginRoute'
 import PrivateRoute from './Middleware/PrivateRoute'
 import CheckProfileRoute from './Middleware/CheckProfileRoute'
@@ -24,7 +24,7 @@ import Profile from './Views/Profile';
 
 const Router = () => {
     return (
-        <BrowserRouter basename={process.env.PUBLIC_URL} >
+        <HashRouter basename={process.env.PUBLIC_URL} >
             <Routes>
                 <Route path="/login" element={<LoginRoute> <Login title="Login"/> </LoginRoute>}/>
 				<Route path="/register" element={<LoginRoute> <Register title="Register"/> </LoginRoute>}/>
@@ -46,7 +46,7 @@ const Router = () => {
 
                 <Route path="*" element={<NotFound title="Page Not Found"/>} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
